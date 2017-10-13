@@ -34,7 +34,7 @@ public class MyPermissionsAuthorizationFilter extends PermissionsAuthorizationFi
             .contains("XMLHttpRequest")))) {
       response.setContentType("application/json");
       PrintWriter writer = response.getWriter();
-      writer.write("{\"success\":false,\"errorMessages\":[\"no permission\"]}");
+      writer.write("{\"success\":false,\"errorMessages\":[\"Subject does not have permission\"]}");
       writer.close();
     }
 
