@@ -1,0 +1,14 @@
+cc\eoma\spring\boot\autoconfigure\shiro\auth\filter\MyPermissionsAuthorizationFilter.class
+cc\eoma\spring\boot\autoconfigure\shiro\ShiroAutoConfiguration.class
+cc\eoma\spring\boot\autoconfigure\shiro\FilterChainDefinitioner.class
+cc\eoma\spring\boot\autoconfigure\shiro\cache\RedisCacheManager.class
+cc\eoma\spring\boot\autoconfigure\shiro\session\MyDefaultWebSessionManager.class
+cc\eoma\spring\boot\autoconfigure\shiro\ShiroFilterChainAutoConfiguration.class
+cc\eoma\spring\boot\autoconfigure\shiro\DefaultFilterChainDefinitioner.class
+cc\eoma\spring\boot\autoconfigure\shiro\auth\filter\MyAuthcAuthorizationFilter.class
+META-INF\spring-configuration-metadata.json
+cc\eoma\spring\boot\autoconfigure\shiro\MyShiroFilterFactoryBean.class
+cc\eoma\spring\boot\autoconfigure\shiro\cache\RedisCache.class
+cc\eoma\spring\boot\autoconfigure\shiro\ShiroProperties.class
+cc\eoma\spring\boot\autoconfigure\shiro\MyShiroFilterFactoryBean$MySpringShiroFilter.class
+cc\eoma\spring\boot\autoconfigure\shiro\session\RedisSessionDAO.class

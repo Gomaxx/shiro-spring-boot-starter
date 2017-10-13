@@ -1,0 +1,69 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "cc.eoma.spring.boot.autoconfigure.shiro.ShiroProperties",
+      "name": "shiro",
+      "type": "cc.eoma.spring.boot.autoconfigure.shiro.ShiroProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "cc.eoma.spring.boot.autoconfigure.shiro.ShiroProperties",
+      "name": "shiro.filter-chain-definition-map",
+      "type": "java.util.Map<java.lang.String,java.lang.String>"
+    },
+    {
+      "sourceType": "cc.eoma.spring.boot.autoconfigure.shiro.ShiroProperties",
+      "name": "shiro.filter-chain-definitioner",
+      "type": "java.lang.Class<? extends cc.eoma.spring.boot.autoconfigure.shiro.DefaultFilterChainDefinitioner>"
+    },
+    {
+      "sourceType": "cc.eoma.spring.boot.autoconfigure.shiro.ShiroProperties",
+      "defaultValue": "login",
+      "name": "shiro.login-url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "cc.eoma.spring.boot.autoconfigure.shiro.ShiroProperties",
+      "name": "shiro.realm",
+      "type": "java.lang.Class<? extends org.apache.shiro.realm.AuthorizingRealm>"
+    },
+    {
+      "sourceType": "cc.eoma.spring.boot.autoconfigure.shiro.ShiroProperties",
+      "defaultValue": true,
+      "name": "shiro.session-http-only",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "cc.eoma.spring.boot.autoconfigure.shiro.ShiroProperties",
+      "defaultValue": -1,
+      "name": "shiro.session-max-age",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "cc.eoma.spring.boot.autoconfigure.shiro.ShiroProperties",
+      "defaultValue": "shiro-session-id",
+      "name": "shiro.session-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "cc.eoma.spring.boot.autoconfigure.shiro.ShiroProperties",
+      "defaultValue": "\/",
+      "name": "shiro.session-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "cc.eoma.spring.boot.autoconfigure.shiro.ShiroProperties",
+      "defaultValue": "success",
+      "name": "shiro.success-url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "cc.eoma.spring.boot.autoconfigure.shiro.ShiroProperties",
+      "defaultValue": "unauthorized",
+      "name": "shiro.unauthorized-url",
+      "type": "java.lang.String"
+    }
+  ]
+}
