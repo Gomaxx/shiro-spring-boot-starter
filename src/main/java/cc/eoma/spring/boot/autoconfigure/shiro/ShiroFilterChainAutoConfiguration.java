@@ -4,6 +4,7 @@ import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -14,6 +15,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 @Configuration
+@ConditionalOnClass({ApplicationContextAware.class, ApplicationContext.class})
 @EnableConfigurationProperties(ShiroProperties.class)
 public class ShiroFilterChainAutoConfiguration implements ApplicationContextAware {
   private Logger logger = LoggerFactory.getLogger(getClass());

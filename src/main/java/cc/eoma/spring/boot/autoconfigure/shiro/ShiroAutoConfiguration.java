@@ -78,7 +78,7 @@ public class ShiroAutoConfiguration {
     shiroFilterFactoryBean.setSuccessUrl(shiroProperties.getSuccessUrl());
     shiroFilterFactoryBean.setUnauthorizedUrl(shiroProperties.getUnauthorizedUrl());
 
-    Map<String, Filter> filters = new HashMap<String, Filter>();
+    Map<String, Filter> filters = new HashMap<>();
     /**
      * 重写 authc、perms filter，支持ajax请求返回JSON数据。
      * ==== shiro 默认 filters： http://shiro.apache.org/web.html#Web-defaultfilters
@@ -87,7 +87,7 @@ public class ShiroAutoConfiguration {
     filters.put("perms", new MyPermissionsAuthorizationFilter());
     shiroFilterFactoryBean.setFilters(filters);
 
-    Map<String, String> filterChainDefinitionMap = new HashMap<String, String>();
+    Map<String, String> filterChainDefinitionMap = new HashMap<>();
     /**
      * shiro filter definition map setting.
      *
