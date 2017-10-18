@@ -79,38 +79,33 @@ public class ShiroAutoConfiguration {
     shiroFilterFactoryBean.setUnauthorizedUrl(shiroProperties.getUnauthorizedUrl());
 
     Map<String, Filter> filters = new HashMap<>();
-    /**
-     * 重写 authc、perms filter，支持ajax请求返回JSON数据。
-     * ==== shiro 默认 filters： http://shiro.apache.org/web.html#Web-defaultfilters
-     */
+
+    // 重写 authc、perms filter，支持ajax请求返回JSON数据。
+    // ==== shiro 默认 filters： http://shiro.apache.org/web.html#Web-defaultfilters
     filters.put("authc", new MyAuthcAuthorizationFilter());
     filters.put("perms", new MyPermissionsAuthorizationFilter());
     shiroFilterFactoryBean.setFilters(filters);
 
     Map<String, String> filterChainDefinitionMap = new HashMap<>();
-    /**
-     * shiro filter definition map setting.
-     *
-     * 格式如下：
-     *    filterChainDefinitionMap.put("/**", "anon");
-     *    filterChainDefinitionMap.put("/**","authc");
-     *    filterChainDefinitionMap.put("/static/**", "anno");
-     *
-     * 此处采用两种方法： 1.appliction配置文件中配置，2.配置filgerChainDefinitioner类重写getFilterChainDefinitionMap方法来获取。
-     */
 
+    // shiro filter definition map setting.
+    //
+    // 格式如下：
+    //   filterChainDefinitionMap.put("/**", "anon");
+    //   filterChainDefinitionMap.put("/**","authc");
+    //   filterChainDefinitionMap.put("/static/**", "anno");
+    //
+    // 此处采用两种方法： 1.appliction配置文件中配置，2.配置filgerChainDefinitioner类重写getFilterChainDefinitionMap方法来获取。
     if (shiroProperties.getFilterChainDefinitionMap() != null) {
       filterChainDefinitionMap.putAll(shiroProperties.getFilterChainDefinitionMap());
     }
 
-    /**
-     * 可以从数据库中获取菜单拦截信息
-     * -
-     * ==== 如果采用DubboConsumer时，在这里是无法注入的，因为此时DubboConsumer代理尚未生成，
-     * ======== 解决方法见 ShiroFilterChainAutoConfiguration（参考：@jun.zhao）
-     */
-    shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
+    //可以从数据库中获取菜单拦截信息
+    // -
+    // ==== 如果采用DubboConsumer时，在这里是无法注入的，因为此时DubboConsumer代理尚未生成，
+    // ======== 解决方法见 ShiroFilterChainAutoConfiguration（参考：@jun.zhao）
 
+    shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
     return shiroFilterFactoryBean;
   }
 
