@@ -6,7 +6,7 @@
 
   <groupId>cc.eoma</groupId>
   <artifactId>shiro-spring-boot-starter</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
 
   <properties>
     <java.version>1.8</java.version>
@@ -90,4 +90,18 @@
     </plugins>
   </build>
 
+
+
+  <distributionManagement>
+    <repository>
+      <id>internal</id>
+      <name>My Internal Repository</name>
+      <url>http://47.93.186.41:8088/repository/internal</url>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <name>My Snapshot Repository</name>
+      <url>http://47.93.186.41:8088/repository/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
