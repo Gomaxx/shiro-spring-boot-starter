@@ -1,6 +1,8 @@
 package cc.eoma.spring.boot.autoconfigure.shiro;
 
+import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
+import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
@@ -24,6 +26,13 @@ public class ShiroFilterChainAutoConfiguration implements ApplicationContextAwar
 
   @Override
   public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+
+    if (this.shiroProperties != null && this.shiroProperties.getRealm() != null){
+      AuthorizingRealm realm = applicationContext.getBean(this.shiroProperties.getRealm());
+      DefaultWebSecurityManager defaultWebSecurityManager = applicationContext.getBean(DefaultWebSecurityManager.class);
+      defaultWebSecurityManager.setRealm(realm);
+    }
+
     if (this.shiroProperties != null && this.shiroProperties.getFilterChainDefinitioner() != null) {
       this.logger.info(
           "application config filter chain definitioner is: {}",
@@ -39,5 +48,7 @@ public class ShiroFilterChainAutoConfiguration implements ApplicationContextAwar
           applicationContext.getBean(ShiroFilterFactoryBean.class);
       shiroFilterFactoryBean.getFilterChainDefinitionMap().putAll(filterChainDefinitionMap);
     }
+
+
   }
 }
