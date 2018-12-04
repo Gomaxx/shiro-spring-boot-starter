@@ -115,10 +115,10 @@ public class ShiroAutoConfiguration {
       SessionManager sessionManager, CacheManager cacheManager, ShiroProperties shiroProperties) {
     DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
 
-    if (shiroProperties.getRealm() != null) {
-      AuthorizingRealm realm = BeanUtils.instantiate(shiroProperties.getRealm());
-      securityManager.setRealm(realm);
-    }
+//    if (shiroProperties.getRealm() != null) {
+//      AuthorizingRealm realm = BeanUtils.instantiate(shiroProperties.getRealm());
+//      securityManager.setRealm(realm);
+//    }
     securityManager.setSessionManager(sessionManager);
     securityManager.setCacheManager(cacheManager);
     return securityManager;
